@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "app_version": "1.0.0",
+  "network_mode": "branches",
+  "base_mva": null,
+  "buses": [
+    {
+      "id": "1",
+      "name": "Reference",
+      "type": "Slack",
+      "p": null,
+      "q": null,
+      "v_set": 1.0,
+      "angle_set": 0.0,
+      "v_guess": 1.0,
+      "angle_guess": 0.0,
+      "q_min": null,
+      "q_max": null,
+      "q_load": 0.0,
+      "shunt_g": 0.0,
+      "shunt_b": 0.0
+    },
+    {
+      "id": "2",
+      "name": "Load",
+      "type": "PQ",
+      "p": -2.0,
+      "q": -0.5,
+      "v_set": null,
+      "angle_set": null,
+      "v_guess": 1.0,
+      "angle_guess": 0.0,
+      "q_min": null,
+      "q_max": null,
+      "q_load": 0.0,
+      "shunt_g": 0.0,
+      "shunt_b": 0.0
+    },
+    {
+      "id": "3",
+      "name": "Generator",
+      "type": "PV",
+      "p": 1.0,
+      "q": null,
+      "v_set": 1.0,
+      "angle_set": null,
+      "v_guess": 1.0,
+      "angle_guess": 0.0,
+      "q_min": -5.0,
+      "q_max": 5.0,
+      "q_load": 0.0,
+      "shunt_g": 0.0,
+      "shunt_b": 0.0
+    }
+  ],
+  "branches": [
+    {
+      "id": "L12",
+      "from_bus": "1",
+      "to_bus": "2",
+      "r": 0.0,
+      "x": 0.1,
+      "b": 0.0
+    },
+    {
+      "id": "L13",
+      "from_bus": "1",
+      "to_bus": "3",
+      "r": 0.0,
+      "x": 0.4,
+      "b": 0.0
+    },
+    {
+      "id": "L23",
+      "from_bus": "2",
+      "to_bus": "3",
+      "r": 0.0,
+      "x": 0.2,
+      "b": 0.0
+    }
+  ],
+  "ybus": null,
+  "solver": {
+    "method": "Newton-Raphson",
+    "tolerance": 1e-06,
+    "max_iterations": 100,
+    "enforce_q_limits": false
+  }
+}

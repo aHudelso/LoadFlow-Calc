@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "load-flow-learning-lab"
+version = "1.0.0"
+description = "An educational, step-by-step AC load-flow desktop calculator"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.gui-scripts]
+loadflow-lab = "loadflow_app.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["loadflow_app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
